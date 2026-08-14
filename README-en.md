@@ -43,7 +43,8 @@ Open the extension icon → Options page to configure the translation engine and
 
 ## Privacy Policy
 
-See [privacy](https://xjgzm.github.io/yt-chat-translator/privacy-en.html) for details.
+See [here](https://xjgzm.github.io/yt-chat-translator/privacy-en.html) for details.<br>
+日本語版[こちら](https://xjgzm.github.io/pages/privacy-ja.html)
 
 ## Changelog
 
