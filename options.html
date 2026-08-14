@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>YouTube Live Chat Translator - Settings</title>
+<style>
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+    max-width: 520px;
+    margin: 32px auto;
+    color: #222;
+    padding: 0 16px;
+  }
+  h1 { font-size: 18px; }
+  fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+  }
+  legend { font-weight: 600; padding: 0 6px; }
+  .field { margin-bottom: 12px; }
+  label { display: block; font-size: 13px; margin-bottom: 4px; color: #444; }
+  select, input[type=text], input[type=password] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .hint { font-size: 12px; color: #777; margin-top: 4px; }
+  .row-check { display: flex; align-items: center; gap: 8px; }
+  button {
+    background: #ff0033;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  button:hover { background: #d40029; }
+  #status { margin-left: 10px; font-size: 12px; color: green; }
+  .provider-fields { display: none; }
+  .provider-fields.active { display: block; }
+</style>
+</head>
+<body>
+  <h1 id="optionsTitle">YouTube Live Chat Translator - 設定</h1>
+
+  <fieldset>
+    <legend id="legendBasic">基本設定</legend>
+    <div class="field row-check">
+      <input type="checkbox" id="enabled" />
+      <label for="enabled" id="enabledLabel" style="margin:0;">拡張機能を有効にする</label>
+    </div>
+    <div class="field">
+      <label for="targetLang" id="targetLangLabel">自分の言語（この言語以外のコメントを翻訳します）</label>
+      <select id="targetLang">
+        <option value="ja">日本語</option>
+        <option value="en">English</option>
+        <option value="ko">한국어</option>
+        <option value="zh">中文</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="pt">Português</option>
+        <option value="ru">Русский</option>
+        <option value="th">ไทย</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="id">Bahasa Indonesia</option>
+      </select>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend id="legendEngine">翻訳エンジン</legend>
+    <div class="field">
+      <label for="provider" id="providerLabel">プロバイダー</label>
+      <select id="provider">
+        <option value="google" id="optGoogle">Google翻訳（無料・APIキー不要）</option>
+        <option value="deepl" id="optDeepl">DeepL（要APIキー・高精度）</option>
+        <option value="openrouter" id="optOpenrouter">OpenRouter（要APIキー・自分でモデル選択）</option>
+      </select>
+      <div class="hint" id="providerHint">まずはGoogle翻訳（無料）でお試しいただけます。精度やレート制限が気になる場合はDeepLかOpenRouterのAPIキーを設定してください。</div>
+    </div>
+
+    <div class="field provider-fields" id="fields-deepl">
+      <label for="deeplKey" id="deeplKeyLabel">DeepL APIキー</label>
+      <input type="password" id="deeplKey" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:fx" />
+      <div class="hint" id="deeplHint">無料プランのキーは末尾が ":fx" になります。</div>
+    </div>
+
+    <div class="field provider-fields" id="fields-openrouter">
+      <label for="openrouterKey" id="openrouterKeyLabel">OpenRouter APIキー</label>
+      <input type="password" id="openrouterKey" placeholder="sk-or-v1-..." />
+      <label for="openrouterModel" id="openrouterModelLabel" style="margin-top:10px;">モデル</label>
+      <input type="text" id="openrouterModel" placeholder="openai/gpt-4o-mini" />
+      <div class="hint" id="openrouterHint">お使いのBYOKアプリと同じキーを利用できます。</div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend id="legendSkipWords">翻訳しない単語</legend>
+    <div class="field">
+      <label for="customSkipWords" id="customSkipWordsLabel">翻訳をスキップする単語(カンマ区切り)</label>
+      <input type="text" id="customSkipWords" placeholder="例: pog, poggers" />
+      <div class="hint" id="customSkipWordsHint">ここに入力した単語と完全一致するコメントは、翻訳せずそのまま表示します(大文字・小文字は区別しません)。「gg」「wwww」などの標準的なスラングは設定しなくても最初から除外されます。</div>
+    </div>
+  </fieldset>
+
+  <button id="save">保存</button>
+  <span id="status"></span>
+
+  <script src="options-i18n.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
