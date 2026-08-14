@@ -43,7 +43,7 @@ Chrome系ブラウザ（Edge, Brave等）でも同様の手順で動作します
 
 ## プライバシーポリシー
 
-[こちら](https://xjgzm.github.io/yt-chat-translator/privacy-ja.html)) を参照してください
+[こちら](https://xjgzm.github.io/yt-chat-translator/privacy-ja.html) を参照してください
 
 ## 更新履歴
 
