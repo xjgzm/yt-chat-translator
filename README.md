@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/33651660/README.md)
 # YouTube Live Chat Translator
 
 English | [日本語](./README-ja.md)
