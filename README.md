@@ -1,7 +1,7 @@
 [README.md](https://github.com/user-attachments/files/33651660/README.md)
 # YouTube Live Chat Translator
 
-日本語 | [English](./README-ja.md)
+English | [日本語](./README-ja.md)
 
 A Chrome extension that automatically translates YouTube Live chat messages that aren't in your language, and displays the translation right below the original comment.
 
